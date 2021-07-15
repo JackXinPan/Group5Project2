@@ -30,17 +30,13 @@ Base.prepare(engine, reflect=True)
 
 
 # Query plankton Records in the the Database
-phyto_data = pd.read_sql("SELECT * FROM phytoplankton", conn)
-phyto_data.to_dict()
-phyto__color_index_data = pd.read_sql("SELECT * FROM phytoplankton_color_index", conn)
-phyto__color_index_data.to_dict()
-zoo_data = pd.read_sql("SELECT * FROM zooplankton", conn)
-zoo_data.to_dict()
+phyto_data = pd.read_sql("SELECT * FROM phytoplankton LIMIT 100", conn)
+phyto__color_index_data = pd.read_sql("SELECT * FROM phytoplankton_color_index LIMIT 100", conn)
+zoo_data = pd.read_sql("SELECT * FROM zooplankton LIMIT 100", conn)
 #################################################
 # Flask Setup
 #################################################
 app = Flask(__name__)
-phyto_data.to_dict()
 
 #################################################
 # Flask Routes
