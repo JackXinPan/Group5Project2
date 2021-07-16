@@ -11,7 +11,7 @@ from flask import Flask, jsonify
 #################################################
 # Database Setup
 #################################################
-engine = create_engine("sqlite:///planktontest2.sqlite")
+engine = create_engine("sqlite:///planktontest3.sqlite")
 conn = engine.connect()
 # reflect an existing database into a new model
 Base = automap_base()
