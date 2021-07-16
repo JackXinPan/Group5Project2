@@ -32,7 +32,7 @@ Base.prepare(engine, reflect=True)
 # Query plankton Records in the the Database
 phyto_data = pd.read_sql("SELECT * FROM phytoplankton WHERE year > 2010" , conn)
 # phyto__color_index_data = pd.read_sql("SELECT * FROM phytoplankton_color_index WHERE year > 2010", conn)
-zoo_data = pd.read_sql("SELECT * FROM zooplankton WHERE year > 2010", conn)
+zoo_data = pd.read_sql("SELECT * FROM zooplankton WHERE year > 2017", conn)
 #################################################
 # Flask Setup
 #################################################
