@@ -11,7 +11,7 @@ from flask import Flask, jsonify
 #################################################
 # Database Setup
 #################################################
-engine = create_engine("sqlite:///plankton.sqlite")
+engine = create_engine("sqlite:///planktontest.sqlite")
 conn = engine.connect()
 # reflect an existing database into a new model
 Base = automap_base()
@@ -30,9 +30,9 @@ Base.prepare(engine, reflect=True)
 
 
 # Query plankton Records in the the Database
-phyto_data = pd.read_sql("SELECT * FROM phytoplankton LIMIT 100", conn)
-phyto__color_index_data = pd.read_sql("SELECT * FROM phytoplankton_color_index LIMIT 100", conn)
-zoo_data = pd.read_sql("SELECT * FROM zooplankton LIMIT 100", conn)
+phyto_data = pd.read_sql("SELECT * FROM phytoplankton", conn)
+phyto__color_index_data = pd.read_sql("SELECT * FROM phytoplankton_color_index", conn)
+zoo_data = pd.read_sql("SELECT * FROM zooplankton", conn)
 #################################################
 # Flask Setup
 #################################################
