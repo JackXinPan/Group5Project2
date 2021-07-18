@@ -11,7 +11,7 @@ from flask import Flask, jsonify
 #################################################
 # Database Setup
 #################################################
-engine = create_engine("sqlite:///plankton.sqlite")
+engine = create_engine("sqlite:///planktontest.sqlite")
 conn = engine.connect()
 # reflect an existing database into a new model
 Base = automap_base()
@@ -30,9 +30,9 @@ Base.prepare(engine, reflect=True)
 
 
 # Query plankton Records in the the Database
-phyto_data = pd.read_sql("SELECT * FROM phytoplankton LIMIT 100", conn)
-phyto__color_index_data = pd.read_sql("SELECT * FROM phytoplankton_color_index LIMIT 100", conn)
-zoo_data = pd.read_sql("SELECT * FROM zooplankton LIMIT 100", conn)
+phyto_data = pd.read_sql("SELECT * FROM phytoplankton WHERE year > 2010"  , conn)
+# phyto__color_index_data = pd.read_sql("SELECT * FROM phytoplankton_color_index WHERE year > 2010", conn)
+zoo_data = pd.read_sql("SELECT * FROM zooplankton WHERE year > 2010" , conn)
 #################################################
 # Flask Setup
 #################################################
@@ -48,17 +48,17 @@ def welcome():
     return (
         f"Available directories<p>"
         f"/phytoplankton<br/>"
-        f"/phytoplankton_color_index<br/>"
-        f"/zooplankton"
+        f"/phytoplankton_color_index<b>(DEFUNCT)<br/>"
+        f"<span style=font-weight:normal>/zooplankton<span/>"
     )
 
 @app.route("/phytoplankton")  
 def phyto():
     return (phyto_data.to_dict())
 
-@app.route("/phytoplankton_color_index")  
-def phyto_color():
-    return (phyto__color_index_data.to_dict())
+# @app.route("/phytoplankton_color_index")  
+# def phyto_color():
+#     return (phyto__color_index_data.to_dict())
 
 @app.route("/zooplankton")  
 def zoo():
