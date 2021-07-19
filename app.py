@@ -4,7 +4,7 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template, url_for
 
 
 
@@ -47,10 +47,16 @@ def welcome():
     print("Server received request for 'Home' page...")
     return (
         f"Available directories<p>"
+        f"/index.html<br/>"
         f"/phytoplankton<br/>"
         f"/phytoplankton_color_index<b>(DEFUNCT)<br/>"
         f"<span style=font-weight:normal>/zooplankton<span/>"
     )
+
+@app.route("/index.html")
+def index():
+    return render_template("index.html")
+
 
 @app.route("/phytoplankton")  
 def phyto():
