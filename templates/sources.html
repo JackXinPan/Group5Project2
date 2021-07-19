@@ -13,14 +13,15 @@
 	data-auto-a11y="true"
   ></script>
 	<!-- <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script> -->
-	<link href="style.css" rel="stylesheet">
+	<link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+	<!-- <link href="style.css" rel="stylesheet"> -->
 </head>
 <body>
 
 <!-- Navigation -->
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-	<a class="navbar-brand" href="index.html"><img src="img/logo.png"></a>
+	<a class="navbar-brand" href="index.html"><img src="static/img/logo.png"></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 	  <span class="navbar-toggler-icon"></span>
 	</button>
@@ -62,7 +63,7 @@
 		<p>Mauris sollicitudin ante in scelerisque commodo. Fusce scelerisque ullamcorper nunc, sit amet vulputate dolor iaculis vel. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum diam a tincidunt volutpat. Fusce pulvinar velit erat, id euismod est mollis nec. Curabitur ultrices tortor nisi. Sed feugiat massa gravida aliquet suscipit. In luctus tellus magna, eu pellentesque urna ultrices non. Vestibulum sagittis metus arcu, et sollicitudin metus tincidunt fringilla. Etiam tincidunt quam ac placerat malesuada. Praesent vel arcu erat. Nulla at felis libero. Ut odio felis, feugiat in leo ac, consectetur ullamcorper nisl. Praesent tempor posuere bibendum. Cras nisi tellus, imperdiet eu molestie vel, dictum a erat. Fusce sodales ultricies eleifend.</p>
 	</div>
 	<div class="col-lg-6">
-		<img src="img/plot1.png" class="img-fluid">
+		<img src="static/img/plot1.png" class="img-fluid">
 	</div>
 
 </div>

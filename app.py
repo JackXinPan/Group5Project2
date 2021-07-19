@@ -48,15 +48,35 @@ def welcome():
     return (
         f"Available directories<p>"
         f"/index.html<br/>"
+        f"/about.html<br/>"
+        f"/map.html<br/>"
+        f"/sources.html<br/>"
+        f"/visualisations.html<br/>"
         f"/phytoplankton<br/>"
         f"/phytoplankton_color_index<b>(DEFUNCT)<br/>"
         f"<span style=font-weight:normal>/zooplankton<span/>"
     )
 
+
 @app.route("/index.html")
 def index():
     return render_template("index.html")
 
+@app.route("/about.html")
+def about():
+    return render_template("about.html")
+
+@app.route("/map.html")
+def map():
+    return render_template("map.html")
+
+@app.route("/sources.html")
+def sources():
+    return render_template("sources.html")
+
+@app.route("/visualisations.html")
+def visualisations():
+    return render_template("visualisations.html")
 
 @app.route("/phytoplankton")  
 def phyto():
