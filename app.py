@@ -10,7 +10,7 @@ from flask import Flask, jsonify, render_template, url_for
 #################################################
 # Database Setup
 #################################################
-engine = create_engine("sqlite:///planktontestmain3.sqlite")
+engine = create_engine("sqlite:///planktontestmain4.sqlite")
 conn = engine.connect()
 # reflect an existing database into a new model
 Base = automap_base()
@@ -51,9 +51,8 @@ def welcome():
         f"/map.html<br/>"
         f"/sources.html<br/>"
         f"/visualisations.html<br/>"
-        f"/phytoplankton<br/>"
         f"/phytoplankton_color_index<b>(DEFUNCT)<br/>"
-        f"<span style=font-weight:normal>/zooplankton<span/><br/>"
+        f"<span style=font-weight:normal>api/zooplankton<span/><br/>"
         f"/test<br/>"
         f"/test2<br/>"
         f"/api/phytoplankton<br/>"
@@ -64,7 +63,8 @@ def welcome():
 def index():
     return render_template("index.html")
 
-@app.route("/about.html")
+
+@app.route("/about")
 def about():
     return render_template("about.html")
 
@@ -72,7 +72,7 @@ def about():
 def map():
     return render_template("map.html")
 
-@app.route("/sources.html")
+@app.route("/sources")
 def sources():
     return render_template("sources.html")
 
@@ -83,7 +83,7 @@ def visualisations():
 #################################################
 # API routes
 #################################################
-@app.route("/phytoplankton")  
+@app.route("/api/phytoplankton")  
 def phyto():
     return jsonify((phyto_data.to_dict()))
 
@@ -95,7 +95,7 @@ def phyto():
 def test():
     return (phyto_data["Year"].to_dict())
 
-@app.route("/zooplankton")  
+@app.route("/api/zooplankton")  
 def zoo():
     return jsonify((zoo_data.to_dict()))
 
@@ -105,71 +105,6 @@ def zoo():
 # def phytoplankton():
 #     return jsonify(Phytoplankton)
 
-#################################################
-# Database Setup
-#################################################
-
-
-# from flask_sqlalchemy import SQLAlchemy
-
-# app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///planktontestmain2.sqlite"
-
-# db = SQLAlchemy(app)
-
-# #################################################
-# # Models Setup
-# #################################################
-
-# class Phytoplankton(db.Model):
-#     __tablename__ = 'phytoplankton'
-
-#     id = db.Column(db.Integer, primary_key=True)
-#     year = db.Column(db.Float)
-#     lat = db.Column(db.Float)
-#     lon = db.Column(db.Float)
-#     taxon_name = db.Column(db.String(64))
-#     taxon_per_m3 = db.column(db.Float)
-
-#     def __repr__(self):
-#         return '<Phytoplankton %r>' % (self.taxon_name)
-
-# #################################################
-# # API routes
-# #################################################
-# @app.route("/test2")
-# def test2():
-#     results = db.session.query(Phytoplankton, Phytoplankton.lat, Phytoplankton.lon, Phytoplankton.taxon_name, Phytoplankton.taxon_per_m3 ).all()
-#     return jsonify([result[3] for result in results])
-
-# @app.route("/api/phytoplankton")
-# def pals():
-#     results = db.session.query(Phytoplankton, Phytoplankton.lat, Phytoplankton.lon, Phytoplankton.taxon_name, Phytoplankton.taxon_per_m3 ).all()
-
-#     hover_text = [result[0] for result in results]
-#     lat = [result[1] for result in results]
-#     lon = [result[2] for result in results]
-#     taxon_name = [result[3] for result in results]
-#     taxon_per_m3 = [result[4] for result in results]
-
-#     phytoplankton_data = [{
-#         "type": "scattergeo",
-#         "locationmode": "USA-states",
-#         "lat": lat,
-#         "lon": lon,
-#         "taxon_name": taxon_name,
-#         "taxon_per_m3": taxon_per_m3,
-#         "text": hover_text,
-#         "hoverinfo": "text",
-#         "marker": {
-#             "size": 15,
-#             "line": {
-#                 "color": "rgb(8,8,8)",
-#                 "width": 1
-#             },
-#         }
-#     }]
-
-#     return jsonify(phytoplankton_data)
 
 # open server
 if __name__ == '__main__':
