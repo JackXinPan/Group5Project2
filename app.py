@@ -10,7 +10,7 @@ from flask import Flask, jsonify, render_template, url_for
 #################################################
 # Database Setup
 #################################################
-engine = create_engine("sqlite:///planktontestmain2.sqlite")
+engine = create_engine("sqlite:///planktontestmain3.sqlite")
 conn = engine.connect()
 # reflect an existing database into a new model
 Base = automap_base()
