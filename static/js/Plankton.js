@@ -1,30 +1,44 @@
 // heat map for Zooplankton layer
-var zoo = "static/data/zoo.geojson";
+// var zoo = "../static/data/zoo.geojson";
+var url = "/api/zooplankton"
   
-  d3.json(zoo).then(function(zooData) {
-    console.log(zooData.features[0].geometry.coordinates)
+  d3.json(url).then(function(zooData) {
+    var latitudes = zooData.Latitude
+    var longitudes = zooData.Longitude
+    var taxon_per_m3s = zooData.taxon_per_m3
+    console.log(zooData)
+//     console.log(zooData.features[0].geometry.coordinates)
     var heatArrayZoo = [];
 
-    zooData.features.forEach(function(point) {
-    heatArrayZoo.push([point.geometry.coordinates[0], point.geometry.coordinates[1], point.properties.taxon_per_m3]);
+    Object.keys(latitudes).forEach(function(key) {
+    heatArrayZoo.push([latitudes[key], longitudes[key], taxon_per_m3s[key]]);
     });
-     
+    console.log(heatArrayZoo) 
+
     var zooHeatMap = L.heatLayer(heatArrayZoo, {
     radius: 15,
     blur: 3,
     // max: 50
   }) 
-  var phyto = "static/data/phyto.geojson";
+ // var phyto = "../static/data/phyto.geojson";
+  var url2 = "/api/phytoplankton"
 
-  d3.json(phyto).then(function(phytoData) {
-    console.log(phytoData.features[0].geometry.coordinates)
-    var heatArray = [];
+  d3.json(url2).then(function(phytoData) {
+    
+    var heatArrayPhyto = [];
 
-    phytoData.features.forEach(function(point) {
-    heatArray.push([point.geometry.coordinates[0], point.geometry.coordinates[1], point.properties.taxon_per_m3]);
-    });
+    var latitudes = phytoData.Latitude
+    var longitudes = phytoData.Longitude
+    var taxon_per_m3s = phytoData.taxon_per_m3
+
+    Object.keys(latitudes).forEach(function(key) {
+      heatArrayPhyto.push([latitudes[key], longitudes[key], taxon_per_m3s[key]]);
+      });
+    // phytoData.features.forEach(function(point) {
+    // heatArray.push([point.geometry.coordinates[0], point.geometry.coordinates[1], point.properties.taxon_per_m3]);
+    // });
      
-    var phytoHeatMap = L.heatLayer(heatArray, {
+    var phytoHeatMap = L.heatLayer(heatArrayPhyto, {
     radius: 20,
     blur: 1, 
     max: 5000
