@@ -41,7 +41,7 @@ app = Flask(__name__)
 # Flask Routes
 #################################################
 
-@app.route("/")
+@app.route("/directories")
 def welcome():
     print("Server received request for 'Home' page...")
     return (
@@ -59,12 +59,12 @@ def welcome():
     )
 
 
-@app.route("/index.html")
+@app.route("/")
 def index():
     return render_template("index.html")
 
 
-@app.route("/about")
+@app.route("/about.html")
 def about():
     return render_template("about.html")
 
@@ -72,7 +72,7 @@ def about():
 def map():
     return render_template("map.html")
 
-@app.route("/sources")
+@app.route("/sources.html")
 def sources():
     return render_template("sources.html")
 
