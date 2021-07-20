@@ -10,7 +10,7 @@ from flask import Flask, jsonify, render_template, url_for
 #################################################
 # Database Setup
 #################################################
-engine = create_engine("sqlite:///planktontestmain4.sqlite")
+engine = create_engine("sqlite:///planktontestmain10.sqlite")
 conn = engine.connect()
 # reflect an existing database into a new model
 Base = automap_base()
@@ -29,9 +29,9 @@ Base.prepare(engine, reflect=True)
 
 
 # Query plankton Records in the the Database
-phyto_data = pd.read_sql("SELECT * FROM phytoplankton WHERE Year > 2014"  , conn)
+phyto_data = pd.read_sql("SELECT * FROM phytoplankton WHERE Year > 2015", conn)
 # phyto__color_index_data = pd.read_sql("SELECT * FROM phytoplankton_color_index WHERE year > 2010", conn)
-zoo_data = pd.read_sql("SELECT * FROM zooplankton WHERE Year > 2014" , conn)
+zoo_data = pd.read_sql("SELECT * FROM zooplankton WHERE Year > 2015", conn)
 #################################################
 # Flask Setup
 #################################################
