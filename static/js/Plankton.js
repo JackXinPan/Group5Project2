@@ -7,14 +7,14 @@ var url = "/api/zooplankton"
     var longitudes = zooData.Longitude
     var taxon_per_m3s = zooData.taxon_per_m3
     var log2_m3 = zooData.log2_m3
-    console.log(zooData)
+    // console.log(zooData)
 //     console.log(zooData.features[0].geometry.coordinates)
     var heatArrayZoo = [];
 
     Object.keys(latitudes).forEach(function(key) {
     heatArrayZoo.push([latitudes[key], longitudes[key], log2_m3[key]]);
     });
-    console.log(heatArrayZoo) 
+    // console.log(heatArrayZoo) 
 
     var zooHeatMap = L.heatLayer(heatArrayZoo, {
     radius: 15,
