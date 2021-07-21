@@ -93,3 +93,12 @@ L.control.layers(baseMaps, overlayMaps, {
 }).addTo(myMap);
     });  
     });
+
+
+
+
+  //   var route_list = [];
+
+  //   Object.keys(route).forEach(function(key) {
+  //   route_list.push([routes[key], lat[key], long[key], taxon_value[key]]);
+  // });
