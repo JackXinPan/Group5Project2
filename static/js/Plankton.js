@@ -83,7 +83,7 @@ var overlayMaps = {
 var myMap = L.map("map", {
   center: [-33.7749, 120.4194],
   zoom: 3,
-  layers: [street, phytoHeatMap]
+  layers: [satellite, phytoHeatMap]
 });
 
 // Pass our map layers into our layer control

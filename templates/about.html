@@ -5,13 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>About - Phyto Data App</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<script
-	src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"
-	data-auto-a11y="true"
-  ></script>
+
 	<!-- <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script> -->
 	<!-- <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet"> -->
 	<link href="../static/style.css" rel="stylesheet">
@@ -20,7 +14,7 @@
 
 <!-- Navigation -->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
 	<a class="navbar-brand" href="/"><img src="static/img/logo.png"></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 	  <span class="navbar-toggler-icon"></span>
@@ -59,7 +53,12 @@
 	<div class="col-md-12 col-lg-6">
 		<h2>About</h2>
 		<br>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum orci et sapien consequat, eu cursus enim blandit. Quisque mattis eget sapien id pulvinar. Nulla vitae interdum nisl, ac lacinia dolor. Vivamus odio nibh, ullamcorper a maximus eu, fermentum quis justo. Integer elit lacus, commodo quis ante nec, cursus egestas elit. Proin imperdiet turpis massa, eget mollis mi laoreet ut. Aliquam nec iaculis magna. Aenean commodo et elit in sodales. Donec a enim finibus, congue risus a, ultricies diam.</p>
+		<p>Our website is about the abundance of plankton over time across the coast of Australia.
+			Phytoplankton or “plant drifter” is a catch-all category for all the tiny aquatic organisms that can turn sunlight into food via photosynthesis.
+			While zooplankton or “animal drifter” are also an important part to the ocean ecosystem as they feed on phytoplankton then become a food source for larger predators such as fish.
+			Monitoring the plankton population over time is therefore important to sustain life in the oceans and arguably land as well. 
+			Monitoring also provides researchers and policymakers with environmental and climatic indicators, harmful algal bloom detection, eutrophication and pollution information at both local and national scales.
+			</p>
 		<p>Mauris sollicitudin ante in scelerisque commodo. Fusce scelerisque ullamcorper nunc, sit amet vulputate dolor iaculis vel. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum diam a tincidunt volutpat. Fusce pulvinar velit erat, id euismod est mollis nec. Curabitur ultrices tortor nisi. Sed feugiat massa gravida aliquet suscipit. In luctus tellus magna, eu pellentesque urna ultrices non. Vestibulum sagittis metus arcu, et sollicitudin metus tincidunt fringilla. Etiam tincidunt quam ac placerat malesuada. Praesent vel arcu erat. Nulla at felis libero. Ut odio felis, feugiat in leo ac, consectetur ullamcorper nisl. Praesent tempor posuere bibendum. Cras nisi tellus, imperdiet eu molestie vel, dictum a erat. Fusce sodales ultricies eleifend.</p>
 	</div>
 	<div class="col-lg-6">
@@ -80,6 +79,38 @@
 	<!-- Copyright -->
   
   </footer>
+
+<!-- Javascript Libraries -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script
+src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"
+data-auto-a11y="true"
+></script>
+
+<!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+  integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+  crossorigin=""></script>
+<!-- D3 CDN -->
+<script src="https://d3js.org/d3.v5.min.js"></script>
+  <!-- Leaflet heatmap plugin-->
+<script type="text/javascript" src="../static/js/leaflet-heat.js"></script>
+<!-- API key -->
+<script type="text/javascript" src="../static/js/config.js"></script>
+<!-- JS -->
+<script type="text/javascript" src="../static/js/Plankton.js"></script>
+
+
+<script
+src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"
+data-auto-a11y="true"
+></script>
+<!-- <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script> -->
+
+
 
 
 </body>
