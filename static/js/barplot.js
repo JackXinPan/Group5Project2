@@ -1,30 +1,44 @@
 
-var ul = "/api/phyto_groupby_route"
+// var ul = "/api/phyto_groupby_route"
 
 // d3.json(ul).then(function(phyto_data) {
-//     // console.log(phyto_data)
-//     var route = Object.values(phyto_data.Route);
-//     var year = Object.values(phyto_data.Year);
-//     var taxon_mean = Object.values(phyto_data.taxon_per_m3);
+//      console.log(phyto_data)
+//     var route = phyto_data.Route;
+//     var year = phyto_data.Year;
+//     var taxon_mean = phyto_data.taxon_per_m3;
 //     // console.log(taxon_mean)
-//     var phyto_array = [];
-//     Object.keys(year).forEach(function(key) {
-//         phyto_array.push([route[key], year[key], taxon_mean[key]]);
-//         });
-//     console.log(phyto_array)
-    
-//     // Create a custom filtering function
-//     function year20(phyto) {
-//         return phyto.year = 2020;
+
+//     var phyto_array = {
+//         "route": 1,
+//         "year": 2020,
+//         "taxon_mean": 1
 //     }
+//     console.log(phyto_array)
+//     // var phyto_array = [];
+//     // Object.keys(year).forEach(function(key) {
+//     //     // if (year[key] = 2019) {
+//     //         phyto_array.push([route[key], year[key], taxon_mean[key]]);
+//     //     // } else {
+//     //     //     None
+//     //     // }
+//     //     });
+//     // console.log(phyto_array)
+
+// // Create a custom filtering function
+// function selectYounger(person) {
+//     return person.year > 2018;
+//   }
 //   // filter() uses the custom function as its argument
-//     var test = phyto_array.filter(year20);
-//     console.log(test)
+//   var phyto_19_20 = phyto_array.filter(selectYounger);
+  
+//   // Test
+//   console.log(phyto_19_20);
+  
 // });
 
 
 // api url
-var urlz = "/api/zooplankton2019"
+var urlz = "/api/zooplankton_groupby_2020"
 
 d3.json(urlz).then(function(zoo_data) {
 // console.log(data);
@@ -37,7 +51,7 @@ d3.json(urlz).then(function(zoo_data) {
         x: route,
         y: taxon_value,
         type: "bar",
-        text: `<b>/m3 on average`,
+        // text: `<b>/m3 on average`,
         marker: {
             color: 'green',
             size: 0,
@@ -55,7 +69,7 @@ d3.json(urlz).then(function(zoo_data) {
         Plotly.newPlot('zoo_route_plot', data, layout);
     });
 
-var urlp = "/api/phytoplankton2019"
+var urlp = "/api/phytoplankton_groupby_2020"
 
 d3.json(urlp).then(function(phyto_data) {
 // console.log(data);
@@ -68,7 +82,7 @@ d3.json(urlp).then(function(phyto_data) {
         x: route,
         y: taxon_value,
         type: "bar",
-        text: `<b>/m3 on average`,
+        // text: `<b>/m3 on average`,
         marker: {
             color: 'orange',
             size: 0,

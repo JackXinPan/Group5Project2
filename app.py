@@ -123,50 +123,50 @@ def zgroupby_route():
     return jsonify((zoo_groupby_route.to_dict()))
 
 
-# phyto_2020 = pd.read_sql("SELECT * FROM phytoplankton WHERE Year = 2020", conn)
-phyto_2019 = pd.read_sql("SELECT * FROM phytoplankton WHERE Year = 2019", conn)
-# phyto_2018 = pd.read_sql("SELECT * FROM phytoplankton WHERE Year = 2018", conn)
-# phyto_2017 = pd.read_sql("SELECT * FROM phytoplankton WHERE Year = 2017", conn)
+phyto_2020 = pd.read_sql("SELECT * FROM phytoplankton_groupby_route WHERE Year = 2020", conn)
+phyto_2019 = pd.read_sql("SELECT * FROM phytoplankton_groupby_route WHERE Year = 2019", conn)
+phyto_2018 = pd.read_sql("SELECT * FROM phytoplankton_groupby_route WHERE Year = 2018", conn)
+phyto_2017 = pd.read_sql("SELECT * FROM phytoplankton_groupby_route WHERE Year = 2017", conn)
 
-# zoo_2020 = pd.read_sql("SELECT * FROM zooplankton WHERE Year = 2020", conn)
-zoo_2019 = pd.read_sql("SELECT * FROM zooplankton WHERE Year = 2019", conn)
-# zoo_2018 = pd.read_sql("SELECT * FROM zooplankton WHERE Year = 2018", conn)
-# zoo_2017 = pd.read_sql("SELECT * FROM zooplankton WHERE Year = 2017", conn)
+zoo_2020 = pd.read_sql("SELECT * FROM zooplankton_groupby_route WHERE Year = 2020", conn)
+zoo_2019 = pd.read_sql("SELECT * FROM zooplankton_groupby_route WHERE Year = 2019", conn)
+zoo_2018 = pd.read_sql("SELECT * FROM zooplankton_groupby_route WHERE Year = 2018", conn)
+zoo_2017 = pd.read_sql("SELECT * FROM zooplankton_groupby_route WHERE Year = 2017", conn)
 
 
-# @app.route("/api/phytoplankton2020")
-# def phyto2020():
-#     return jsonify((phyto_2020.to_dict()))
+@app.route("/api/phytoplankton_groupby_2020")
+def phyto2020():
+    return jsonify((phyto_2020.to_dict()))
 
-@app.route("/api/phytoplankton2019")
+@app.route("/api/phytoplankton_groupby_2019")
 def phyto2019():
     return jsonify((phyto_2019.to_dict()))
 
-# @app.route("/api/phytoplankton2018")
-# def phyto2018():
-#     return jsonify((phyto_2018.to_dict()))
+@app.route("/api/phytoplankton_groupby_2018")
+def phyto2018():
+    return jsonify((phyto_2018.to_dict()))
 
-# @app.route("/api/phytoplankton2017")
-# def phyto2017():
-#     return jsonify((phyto_2017.to_dict()))
+@app.route("/api/phytoplankton_groupby_2017")
+def phyto2017():
+    return jsonify((phyto_2017.to_dict()))
 
 
 
-# @app.route("/api/zooplankton2020")
-# def zoo2020():
-#     return jsonify((zoo_2020.to_dict()))
+@app.route("/api/zooplankton_groupby_2020")
+def zoo2020():
+    return jsonify((zoo_2020.to_dict()))
 
-@app.route("/api/zooplankton2019")
+@app.route("/api/zooplankton_groupby_2019")
 def zoo2019():
     return jsonify((zoo_2019.to_dict()))
 
-# @app.route("/api/zooplankton2018")
-# def zoo2018():
-#     return jsonify((zoo_2018.to_dict()))
+@app.route("/api/zooplankton_groupby_2018")
+def zoo2018():
+    return jsonify((zoo_2018.to_dict()))
 
-# @app.route("/api/zooplankton2017")
-# def zoo2017():
-#     return jsonify((zoo_2017.to_dict()))
+@app.route("/api/zooplankton_groupby_2017")
+def zoo2017():
+    return jsonify((zoo_2017.to_dict()))
 
 #################################################
 # API routes for Year Barcharts (only 4 main routes to be able to go across year)
