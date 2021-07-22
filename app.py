@@ -87,6 +87,10 @@ def sources():
 def visualisations():
     return render_template("visualisations.html")
 
+@app.route("/radarplot.html")
+def radarplot():
+    return render_template("radarplot.html")
+
 
 #################################################
 # API routes TAXON GRAPH

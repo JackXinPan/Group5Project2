@@ -22,7 +22,7 @@ d3.json(ul).then(function(phytodata) {
         var data = [tracephyto];
         
         var layout = {
-            title: "Zooplankton Count per m3",
+            title: "Phytoplankton Count per m3",
             yaxis: { title: "Count"}
         };
         
@@ -30,6 +30,11 @@ d3.json(ul).then(function(phytodata) {
         Plotly.newPlot("phyto_bar_plot", data, layout);
 
         var data = [tracezoo];
+
+        var layout = {
+            title: "Zooplankton Count per m3",
+            yaxis: { title: "Count"}
+        };
 
         Plotly.newPlot("zoo_bar_plot", data, layout);
     });  
