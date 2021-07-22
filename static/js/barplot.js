@@ -63,7 +63,7 @@ function phyto_plot(){
     });
 }
 
-    var ul = "/api/phyto_groupby_route"
+var ul = "/api/phyto_groupby_route"
 
 d3.json(ul).then(function(phyto_data) {
      console.log(phyto_data)
@@ -101,7 +101,7 @@ function optionChanged() {
     console.log(menuId)
     console.log(Object.values(data.Year))
     var urlp = `/api/phytoplankton_groupby_${menuId}`
-    var urlz = `/api/phytoplankton_groupby_${menuId}`
+    var urlz = `/api/zooplankton_groupby_${menuId}`
     console.log(urlp)
 
     d3.json(urlp).then(function(phyto_data) {
@@ -169,3 +169,17 @@ function optionChanged() {
 
 zoo_plot();
 phyto_plot();
+
+// words on the page
+var theDiv = document.getElementById("vis_p1");
+var content = document.createTextNode(
+    "Phytoplankton or “plant drifter” is a catch-all category for all the tiny aquatic organisms that can turn sunlight into food via photosynthesis. While zooplankton or “animal drifter” are also an important part to the ocean ecosystem as they feed on phytoplankton then become a food source for larger predators such as fish. A lack of either type of plankton can create an imbalance in the ecosystem having devastating effects like algae bloom, low biodiversity or high carbon dioxide levels. Therefore there is an importance to monitor (and visualise!) the populations of these creatures over time to establish any possible alarming trends that need to be addressed."
+);
+theDiv.appendChild(content);
+
+var theDiv = document.getElementById("vis_p2");
+var content = document.createTextNode(
+    "Places with varying ecological systems and climates, ofcourse, have different degrees of expected hospitality towards reproduction and growth of phyto and zooplankton. With the latter relying on the former in the biological food chain. One of our best methods of monitoring the population trend, is done by grouping observations surveyed Continuous Plankton Tracker routes. With each having their own fixed range of coordinates that they regularly over patrol. Letting us more easily localise trends and allows us for a more precise response in case a plankton imbalance does occur."
+);
+theDiv.appendChild(content);
+P
