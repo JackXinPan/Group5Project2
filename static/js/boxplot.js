@@ -7,14 +7,14 @@ d3.json(ul).then(function(phytodata) {
     d3.json(ulz).then(function(zoodata) {
         var tracephyto = {
             y: Object.values(phytodata.taxon_per_m3),
-            name: "Phytoplankton",
+            name: "Phytoplankton Routes",
             type: "box",
             boxpoints: "all"
         };
         
         var tracezoo = {
             y: Object.values(zoodata.taxon_per_m3),
-            name: "Zooplankton",
+            name: "Zooplankton Routes",
             type: "box",
             boxpoints: "all"
         };
@@ -22,8 +22,8 @@ d3.json(ul).then(function(phytodata) {
         var data = [tracephyto];
         
         var layout = {
-            title: "Phytoplankton Count per m3",
-            yaxis: { title: "Count"}
+            title: "Avg Phytoplankton Count per m3 for Each Route",
+            yaxis: { title: " Avg Count (/m3)"}
         };
         
         // Plot the chart to a div tag with id "plot"
@@ -32,8 +32,8 @@ d3.json(ul).then(function(phytodata) {
         var data = [tracezoo];
 
         var layout = {
-            title: "Zooplankton Count per m3",
-            yaxis: { title: "Count"}
+            title: "Avg Zooplankton Count per m3 for Each Route",
+            yaxis: { title: "Avg Count (/m3)"}
         };
 
         Plotly.newPlot("zoo_bar_plot", data, layout);
