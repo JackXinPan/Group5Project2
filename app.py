@@ -55,8 +55,8 @@ def welcome():
         f"/api/zooplankton<span/><br/>"
         f"/api/phytoplankton<br/>"
         f"/api/phyto_years<br/>"
-        f"/api/phyto_groupby_route (BEWARE taxon_per_m3 is the mean value for year)<br/>"
-        f"/api/zoo_groupby_route (BEWARE taxon_per_m3 is the mean value for year)<br/>"
+        f"/api/phyto_groupby_route (BEWARE taxon_per_m3 is the median value for year)<br/>"
+        f"/api/zoo_groupby_route (BEWARE taxon_per_m3 is the median value for year)<br/>"
         f"/api/zoo_years<br/>"
         f"/api/phyto_taxon_group<br/>"
         f"/api/zoo_taxon_group<br/>"       
@@ -67,6 +67,9 @@ def welcome():
 def index():
     return render_template("index.html")
 
+@app.route("/boxplots.html")
+def boxplots():
+    return render_template("boxplots.html")
 
 @app.route("/about.html")
 def about():
