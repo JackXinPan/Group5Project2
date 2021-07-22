@@ -1,3 +1,12 @@
+var url = "/api/phyto_groupby_taxon"
+
+d3.json(url).then(function(data) {
+    var group = Object.values(zoo_data.taxon_group);
+    var year = Object.values(zoo_data.Year);
+    var taxon_value = Object.values(zoo_data.taxon_per_m3);
+
+})
+
 
 // api url
 var urlz = "/api/zooplankton_groupby_2020"
