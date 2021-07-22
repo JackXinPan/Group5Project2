@@ -87,6 +87,26 @@ def sources():
 def visualisations():
     return render_template("visualisations.html")
 
+
+#################################################
+# API routes TAXON GRAPH
+#################################################
+# zoo_groupby_taxon.to_sql("zooplankton_groupby_taxon", conn,)
+# phyto_groupby_taxon.to_sql("phytoplankton_groupby_taxon", conn,)
+
+phyto_group_taxon = pd.read_sql("SELECT * FROM phytoplankton_groupby_taxon", conn)
+zoo_group_taxon = pd.read_sql("SELECT * FROM zooplankton_groupby_taxon", conn)
+
+@app.route("/api/phyto_group_taxon")  
+def phyto_g_tax():
+    return jsonify((phyto_group_taxon.to_dict()))
+
+@app.route("/api/zoo_group_taxon")  
+def zoo_g_tax():
+    return jsonify((zoo_group_taxon.to_dict()))
+
+
+
 #################################################
 # API routes HEATMAP
 #################################################
